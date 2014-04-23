@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>584</width>
+    <height>351</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Wetter :)</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QWidget" name="gridLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>581</width>
+      <height>491</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QGroupBox" name="groupBox">
+       <property name="title">
+        <string/>
+       </property>
+       <widget class="QTabWidget" name="tabWidget">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>561</width>
+          <height>241</height>
+         </rect>
+        </property>
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="tab">
+         <attribute name="title">
+          <string>Heute</string>
+         </attribute>
+         <widget class="QLineEdit" name="tfTemp">
+          <property name="geometry">
+           <rect>
+            <x>80</x>
+            <y>80</y>
+            <width>41</width>
+            <height>27</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>40</y>
+            <width>71</width>
+            <height>17</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Wetter:</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="tfWeatherText">
+          <property name="geometry">
+           <rect>
+            <x>80</x>
+            <y>40</y>
+            <width>231</width>
+            <height>27</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_3">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>80</y>
+            <width>71</width>
+            <height>17</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Temp.:</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="tfPressure">
+          <property name="geometry">
+           <rect>
+            <x>80</x>
+            <y>120</y>
+            <width>41</width>
+            <height>27</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_4">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>120</y>
+            <width>71</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Druck:</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="tfHumidiy">
+          <property name="geometry">
+           <rect>
+            <x>80</x>
+            <y>160</y>
+            <width>41</width>
+            <height>27</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_5">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>160</y>
+            <width>71</width>
+            <height>17</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Feuchte:</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblCode">
+          <property name="geometry">
+           <rect>
+            <x>340</x>
+            <y>40</y>
+            <width>71</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="tab_2">
+         <attribute name="title">
+          <string>Morgen</string>
+         </attribute>
+         <widget class="QLabel" name="label_2">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>30</y>
+            <width>71</width>
+            <height>17</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Temp.:</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="myLineEdit_2">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>20</y>
+            <width>41</width>
+            <height>27</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_6">
+          <property name="geometry">
+           <rect>
+            <x>120</x>
+            <y>110</y>
+            <width>251</width>
+            <height>17</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Coming soon ....</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="tab_3">
+         <attribute name="title">
+          <string>Übermorgen</string>
+         </attribute>
+         <widget class="QLabel" name="label_7">
+          <property name="geometry">
+           <rect>
+            <x>100</x>
+            <y>100</y>
+            <width>251</width>
+            <height>17</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Coming soon ....</string>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+       <widget class="QPushButton" name="myPushButton">
+        <property name="geometry">
+         <rect>
+          <x>470</x>
+          <y>260</y>
+          <width>98</width>
+          <height>27</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Aktualisieren</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>584</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
