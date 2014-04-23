@@ -1,7 +1,7 @@
 qt-weather-info
 ===============
 
-A small Qt desktok application which shows a weather forecast.
+A small Qt desktop application which shows a weather forecast.
 
 Weather data is retrieved from 
 
