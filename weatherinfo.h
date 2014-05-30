@@ -18,9 +18,10 @@
                 {
                 "date": "2014-04-20",
                 "day": [ {"weather_code": "60", "weather_text": "Patchy light rain",
-                    "wind": [ {"dir": "E", "dir_degree": "93", "speed": "7", "wind_unit": "kph" } ] } ], "day_max_temp": "11",
+                            "wind": [ {"dir": "E", "dir_degree": "93", "speed": "7", "wind_unit": "kph" } ] } ],
+                 "day_max_temp": "11",
                 "night": [ {"weather_code": "45", "weather_text": "Fog",
-                "wind": [ {"dir": "SSW", "dir_degree": "196", "speed": "4", "wind_unit": "kph" } ] } ], "night_min_temp": "4",
+                        "wind": [ {"dir": "SSW", "dir_degree": "196", "speed": "4", "wind_unit": "kph" } ] } ], "night_min_temp": "4",
                 "temp_unit": "c" },
                 {
                 "date": "2014-04-21",
@@ -34,18 +35,36 @@
 }
 */
 
+
+
+class WindInfo
+{
+public:
+    QString dir,speed, windUnit,dirDegree;
+};
+
 class WeatherInfo
 {
-
 public:
-    QString humidity;
-    QString pressure;
-    QString temp;
-    QString tempUnit;
-    QString weatherCode;
-    QString weatherText;
+    QString humidity, pressure, temp, tempUnit, weatherCode, weatherText;
+    WindInfo* windInfo;
     // TODO to be continued
     WeatherInfo();
+    ~WeatherInfo();
+
+};
+
+
+class ForeCast
+{
+public:
+    QString date;
+    WeatherInfo* day;
+    QString dayMaxTemp, nightMinTemp;
+    WeatherInfo* night;
+    QString tempUnit;
+    ForeCast();
+    ~ForeCast();
 };
 
 
@@ -53,9 +72,11 @@ class Weather
 {
 
 public:
-    WeatherInfo *currentWeather;
+    WeatherInfo* current;
+    ForeCast* day1, *day2;
     Weather();
-
+    ~Weather();
+    char* buf;
 };
 
 #endif // WEATHERINFO_H

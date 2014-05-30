@@ -50,36 +50,72 @@ void GetWeatherAsJson::makeGETRequestForWeather()
 }
 */
 
+WeatherInfo* parseWeatherInfo(QVariantMap weather_info_map)
+{
+    WeatherInfo *weatherInfo = new WeatherInfo();
+
+    weatherInfo->temp   = weather_info_map["temp"].toString();
+    weatherInfo->humidity = weather_info_map["humidity"].toString();
+    weatherInfo->pressure = weather_info_map["pressure"].toString();
+    weatherInfo->weatherText = weather_info_map["weather_text"].toString();
+    weatherInfo->weatherCode = weather_info_map["weather_code"].toString();
+
+    QVariantList wind_list = weather_info_map["wind"].toList();
+    QVariantMap wind_map = wind_list[0].toMap();
+    weatherInfo->windInfo = new WindInfo();
+    weatherInfo->windInfo->dir = wind_map["dir"].toString();
+    weatherInfo->windInfo->dirDegree = wind_map["dir_degree"].toString();
+    weatherInfo->windInfo->speed = wind_map["speed"].toString();
+    weatherInfo->windInfo->windUnit = wind_map["wind_unit"].toString();
+
+    return weatherInfo;
+}
+
 void GetWeatherAsJson::parseNetworkResponse(QNetworkReply* qNetworkReply)
 {
     qDebug() << ">>>>>parseNetworkResponse<<<<<<<<<<<<<<<";
     QByteArray data = qNetworkReply->readAll();
-
-    /*
-     *{ "type": "success", "value": { "id": 242, "joke": "Everybody loves Raymond. Except Chuck Norris.", "categories": [] } }
-     */
     QJson::Parser parser;
     bool ok;
     QVariantMap result = parser.parse (data, &ok).toMap();
 
-    Weather *weather = new Weather();
-    WeatherInfo *currentInfo = new WeatherInfo();
-    weather->currentWeather = currentInfo;
-
     if ( ok )
     {
-        QVariantMap  weather = result["weather"].toMap();
-        QVariantList current_weather_list = weather["curren_weather"].toList();
-        QVariantMap  current_weather = current_weather_list[0].toMap();
-        currentInfo->temp = current_weather["temp"].toString();
-        currentInfo->humidity = current_weather["humidity"].toString();
-        currentInfo->pressure = current_weather["pressure"].toString();
-        currentInfo->weatherText = current_weather["weather_text"].toString();
-        currentInfo->weatherCode = current_weather["weather_code"].toString();
-    }
+        Weather* weather = new Weather();
 
-    qDebug() << "temp: " << currentInfo->temp;
-    emit weatherInfoParsed(weather);
+        // current_weather
+        QVariantMap  weather_map = result["weather"].toMap();
+        QVariantMap  current_weather = weather_map["curren_weather"].toList()[0].toMap();
+        weather->current = parseWeatherInfo(current_weather);
+
+        {
+            // forecast 0
+            QVariantMap forecast = weather_map["forecast"].toList()[0].toMap();
+            weather->day1 = new ForeCast();
+            weather->day1->date = forecast["date"].toString();
+            weather->day1->dayMaxTemp = forecast["day_max_temp"].toString();
+            //QVariantList forecast_day_list = forecast["day"].toList();
+            weather->day1->day = parseWeatherInfo(forecast["day"].toList()[0].toMap());
+            weather->day1->nightMinTemp = forecast["night_min_temp"].toString();
+            weather->day1->night = parseWeatherInfo(forecast["night"].toList()[0].toMap());
+        }
+        {
+            // forecast 1
+            QVariantMap forecast = weather_map["forecast"].toList()[1].toMap();
+            weather->day2 = new ForeCast();
+            weather->day2->date = forecast["date"].toString();
+            weather->day2->dayMaxTemp = forecast["day_max_temp"].toString();
+            weather->day2->day = parseWeatherInfo(forecast["day"].toList()[0].toMap());
+            weather->day2->nightMinTemp = forecast["night_min_temp"].toString();
+            weather->day2->night = parseWeatherInfo(forecast["night"].toList()[0].toMap());
+        }
+
+
+
+        qDebug() << "temp: " << weather->current->temp;
+        emit weatherInfoParsed(weather);
+    }
+    qNetworkReply->deleteLater();
 }
 
 

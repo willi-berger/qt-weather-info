@@ -8,7 +8,7 @@ QT       += core gui
 QT       += network
 QT       += core network
 
-TARGET = test2
+TARGET = qweatherinfo
 TEMPLATE = app
 
 
@@ -26,3 +26,6 @@ FORMS    += mainwindow.ui
 
 INCLUDEPATH += /usr/include/qjson
 LIBS += -Lf/usr/include/qjson/ -lqjson
+
+RESOURCES += \
+    qtresource.qrc
