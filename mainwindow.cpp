@@ -166,6 +166,18 @@ QImage nightIconForCode(QString code)
 }
 
 
+//static bool SetLabelImage(QLabel *label, QString imageFileName)
+//{
+//    QPixmap pixmap(imageFileName);
+//    if (pixmap.isNull()) return false;
+
+//    int w = std::min(pixmap.width(),  label->maximumWidth());
+//    int h = std::min(pixmap.height(), label->maximumHeight());
+//    pixmap = pixmap.scaled(QSize(w, h), Qt::KeepAspectRatio, Qt::SmoothTransformation);
+//    label->setPixmap(pixmap);
+//    return true;
+//}
+
 void MainWindow::updateWeaterModel(Weather *weather)
 {
     qDebug() << "updateWeaterModel";
@@ -178,10 +190,33 @@ void MainWindow::updateWeaterModel(Weather *weather)
     WindInfo *windInfo = weather->current->windInfo;
     ui->tfWind->setText(windInfo->speed.append(" ").append(windInfo->windUnit).append(" ").append(windInfo->dir));
 
+//    SetLabelImage(ui->iconToday, QTime::currentTime().hour() > 18 ?
+//                      dayIconForCode(weather->current->weatherCode) :
+//                      dayIconForCode(weather->current->weatherCode));
+
+    qDebug() << "hour " << QTime::currentTime().hour();
+    bool isNight = false;
+    switch (QDate::currentDate().month()) {
+    case 1: case 12:
+    case 2: case 11:
+        isNight = QTime::currentTime().hour() >= 18;
+        break;
+    case 3: case 10:
+        isNight = QTime::currentTime().hour() >= 19;
+        break;
+    case 4: case 9:
+        isNight = QTime::currentTime().hour() >= 20;
+        break;
+    case 5: case 8:
+    case 6: case 7:
+        isNight = QTime::currentTime().hour() >= 21;
+        break;
+    }
+
     ui->iconToday->setPixmap(
         QPixmap::fromImage(
-            QTime::currentTime().hour() > 18 ?
-                  dayIconForCode(weather->current->weatherCode) :
+            isNight ?
+                  nightIconForCode(weather->current->weatherCode) :
                   dayIconForCode(weather->current->weatherCode)));
 
 

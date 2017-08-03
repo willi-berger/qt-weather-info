@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>481</width>
-    <height>307</height>
+    <width>420</width>
+    <height>294</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Wetter :)</string>
+   <string>Wetter Info</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QWidget" name="gridLayoutWidget">
@@ -40,8 +40,8 @@
          <rect>
           <x>10</x>
           <y>10</y>
-          <width>461</width>
-          <height>231</height>
+          <width>401</width>
+          <height>221</height>
          </rect>
         </property>
         <property name="currentIndex">
@@ -171,8 +171,8 @@
            <rect>
             <x>341</x>
             <y>10</y>
-            <width>61</width>
-            <height>61</height>
+            <width>41</width>
+            <height>31</height>
            </rect>
           </property>
           <property name="text">
@@ -182,7 +182,7 @@
          <widget class="QPushButton" name="btnRefresh">
           <property name="geometry">
            <rect>
-            <x>298</x>
+            <x>240</x>
             <y>150</y>
             <width>141</width>
             <height>27</height>
@@ -195,14 +195,27 @@
          <widget class="QLabel" name="lblTime">
           <property name="geometry">
            <rect>
-            <x>30</x>
-            <y>160</y>
+            <x>260</x>
+            <y>90</y>
             <width>67</width>
             <height>17</height>
            </rect>
           </property>
           <property name="text">
            <string>TextLabel</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_12">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>150</y>
+            <width>221</width>
+            <height>17</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>www.myweather2.com</string>
           </property>
          </widget>
         </widget>
@@ -213,8 +226,8 @@
          <widget class="QLabel" name="label_2">
           <property name="geometry">
            <rect>
-            <x>20</x>
-            <y>20</y>
+            <x>10</x>
+            <y>10</y>
             <width>71</width>
             <height>17</height>
            </rect>
@@ -226,8 +239,8 @@
          <widget class="QLabel" name="label_6">
           <property name="geometry">
            <rect>
-            <x>20</x>
-            <y>60</y>
+            <x>10</x>
+            <y>50</y>
             <width>71</width>
             <height>17</height>
            </rect>
@@ -239,8 +252,8 @@
          <widget class="QLineEdit" name="tfWindDay1">
           <property name="geometry">
            <rect>
-            <x>190</x>
-            <y>60</y>
+            <x>180</x>
+            <y>50</y>
             <width>151</width>
             <height>27</height>
            </rect>
@@ -249,8 +262,8 @@
          <widget class="QLineEdit" name="tfWeatherTextDay1">
           <property name="geometry">
            <rect>
-            <x>90</x>
-            <y>20</y>
+            <x>80</x>
+            <y>10</y>
             <width>251</width>
             <height>27</height>
            </rect>
@@ -259,8 +272,8 @@
          <widget class="QLabel" name="label_9">
           <property name="geometry">
            <rect>
-            <x>140</x>
-            <y>60</y>
+            <x>130</x>
+            <y>50</y>
             <width>71</width>
             <height>17</height>
            </rect>
@@ -272,8 +285,8 @@
          <widget class="QLineEdit" name="tfTempMaxDay1">
           <property name="geometry">
            <rect>
-            <x>90</x>
-            <y>60</y>
+            <x>80</x>
+            <y>50</y>
             <width>41</width>
             <height>27</height>
            </rect>
@@ -282,10 +295,10 @@
          <widget class="QLabel" name="iconDay1">
           <property name="geometry">
            <rect>
-            <x>350</x>
-            <y>20</y>
-            <width>61</width>
-            <height>61</height>
+            <x>340</x>
+            <y>10</y>
+            <width>41</width>
+            <height>31</height>
            </rect>
           </property>
           <property name="text">
@@ -295,8 +308,8 @@
          <widget class="QLabel" name="label_7">
           <property name="geometry">
            <rect>
-            <x>20</x>
-            <y>150</y>
+            <x>10</x>
+            <y>140</y>
             <width>71</width>
             <height>17</height>
            </rect>
@@ -308,8 +321,8 @@
          <widget class="QLineEdit" name="tfTempMinNight1">
           <property name="geometry">
            <rect>
-            <x>90</x>
-            <y>150</y>
+            <x>80</x>
+            <y>140</y>
             <width>41</width>
             <height>27</height>
            </rect>
@@ -318,8 +331,8 @@
          <widget class="QLabel" name="label_10">
           <property name="geometry">
            <rect>
-            <x>20</x>
-            <y>110</y>
+            <x>10</x>
+            <y>100</y>
             <width>71</width>
             <height>17</height>
            </rect>
@@ -331,8 +344,8 @@
          <widget class="QLineEdit" name="tfWeatherTextNight1">
           <property name="geometry">
            <rect>
-            <x>90</x>
-            <y>110</y>
+            <x>80</x>
+            <y>100</y>
             <width>251</width>
             <height>27</height>
            </rect>
@@ -341,8 +354,8 @@
          <widget class="QLabel" name="label_11">
           <property name="geometry">
            <rect>
-            <x>140</x>
-            <y>150</y>
+            <x>130</x>
+            <y>140</y>
             <width>71</width>
             <height>17</height>
            </rect>
@@ -354,8 +367,8 @@
          <widget class="QLineEdit" name="tfWindNight1">
           <property name="geometry">
            <rect>
-            <x>190</x>
-            <y>150</y>
+            <x>180</x>
+            <y>140</y>
             <width>151</width>
             <height>27</height>
            </rect>
@@ -364,10 +377,10 @@
          <widget class="QLabel" name="iconNight1">
           <property name="geometry">
            <rect>
-            <x>350</x>
-            <y>110</y>
-            <width>61</width>
-            <height>61</height>
+            <x>340</x>
+            <y>100</y>
+            <width>41</width>
+            <height>31</height>
            </rect>
           </property>
           <property name="text">
@@ -382,10 +395,10 @@
          <widget class="QLabel" name="iconDay2">
           <property name="geometry">
            <rect>
-            <x>350</x>
-            <y>20</y>
-            <width>71</width>
-            <height>71</height>
+            <x>340</x>
+            <y>10</y>
+            <width>41</width>
+            <height>31</height>
            </rect>
           </property>
           <property name="text">
@@ -520,19 +533,6 @@
            </rect>
           </property>
          </widget>
-         <widget class="QLabel" name="iconDay2_2">
-          <property name="geometry">
-           <rect>
-            <x>340</x>
-            <y>10</y>
-            <width>61</width>
-            <height>61</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
          <widget class="QLineEdit" name="tfWeatherTextNight2">
           <property name="geometry">
            <rect>
@@ -546,10 +546,10 @@
          <widget class="QLabel" name="iconNight2">
           <property name="geometry">
            <rect>
-            <x>350</x>
+            <x>340</x>
             <y>100</y>
-            <width>61</width>
-            <height>61</height>
+            <width>41</width>
+            <height>31</height>
            </rect>
           </property>
           <property name="text">
@@ -568,7 +568,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>481</width>
+     <width>420</width>
      <height>25</height>
     </rect>
    </property>
